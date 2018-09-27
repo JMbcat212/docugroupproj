@@ -8,6 +8,8 @@
 namespace main_savitch_14
 {
 
+/** *function: Displays the current status of the game 
+*/
 void Othello::display_status()const
 {
   cout << BLUE << "   _______ _______ _______ _______ _______ _______ _______ _______\n";
@@ -47,7 +49,6 @@ void Othello::display_status()const
   }
   cout << "\nEnter a move in the format(letter,number) (Ex: A3)" << endl;
 }
-
 void Othello::make_move(const string& move) {
 
   int c, r;
