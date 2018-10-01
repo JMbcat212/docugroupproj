@@ -2,3 +2,5 @@
 *.o
 game
 *.tar.gz
+dir_to_ignore/html
+dir_to_ignore/latex

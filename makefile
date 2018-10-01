@@ -1,5 +1,5 @@
 CC=g++
-RM=rm -f
+RM=rm -R
 CPPFLAGS=-Wall
 
 SRCS=main.cc othello.cc game.cc
