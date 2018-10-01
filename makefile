@@ -5,7 +5,7 @@ CPPFLAGS=-Wall
 SRCS=main.cc othello.cc game.cc
 OBJS=$(subst .cc,.o,$(SRCS))
 
-all: build archive
+all: build doc
 
 build: game
 
@@ -18,9 +18,8 @@ depend: .depend
 	$(RM) ./.depend
 	$(CC) $(CPPFLAGS) -MM $^>>./.depend;
 
-archive:
-	tar -cvf archive.tar *.cc *.h
-	gzip archive.tar
+doc:
+	@doxygen *.cc
 
 clean:
 	$(RM) $(OBJS) game

@@ -17,6 +17,9 @@ namespace main_savitch_14
 //*************************************************************************
 // PUBLIC MEMBER FUNCTIONS
 
+/**
+ *function to play the game until it is over
+**/
 game::who game::play( )
 // The play function should not be overridden. It plays one round of the
 // game, with the human player moving first and the computer second.
@@ -44,12 +47,19 @@ game::who game::play( )
 
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
-
+/**
+ * function to display a message
+ * @param message is a string passed by reference
+**/
 void game::display_message(const string& message) const
 {
 	cout << message;
 }
 
+/**
+ *function to prompt the user for their moved
+ *@return returns a string of the move the user inputted
+**/
 string game::get_user_move( ) const
 {
 	string answer;
@@ -59,7 +69,10 @@ string game::get_user_move( ) const
 	getline(cin, answer);
 	return answer;
 }
-
+/**
+ * function see who is winning
+ * @return returns a variable of the who class
+**/
 game::who game::winning()const {
 
 	int value = evaluate();
@@ -76,7 +89,12 @@ game::who game::winning()const {
 
 //*************************************************************************
 // PRIVATE FUNCTIONS (these are the same for every game)
-
+/**
+ * function to determine best move for the AI
+ * @param look_ahead is how many moves to look at
+ * @param beat_this is the best score to beat in each loop run
+ * @return returns an int with the best move for the AI to do
+**/
 int game::eval_with_lookahead(int look_ahead, int beat_this)
 // Evaluate a board position with lookahead.
 // --int look_aheads:  How deep the lookahead should go to evaluate the move.
@@ -124,7 +142,9 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	// The answer we return should be from player's perspective, so multiply times -1:
 	return -best_value;
 }
-
+/**
+ *function to execute the computers move
+**/
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -157,7 +177,9 @@ void game::make_computer_move( )
 	// Make the best move.
 	make_move(best_move);
 }
-
+/**
+ *function to compute the human move
+**/
 void game::make_human_move( ) {
 	string move;
 
@@ -171,6 +193,3 @@ void game::make_human_move( ) {
 }
 
 }
-
-
-
