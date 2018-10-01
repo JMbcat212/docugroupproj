@@ -456,6 +456,9 @@ int Othello::evaluate()const {
   }
 }
 
+/// computer_moves() - Computer the possible moves for the cpu.
+/// @param moves - This queue holds all moves computed.
+/// @return moves
 void Othello::compute_moves(std::queue<std::string>& moves)const {
   string r;
   string c;
